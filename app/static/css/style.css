@@ -1,0 +1,11 @@
+
+
+
+#title-header {
+	style: text-align: center; 
+	font-size: 72px;
+	font-weight: bold;
+	text-align: center;
+}
+
+@import url("static/css/bootstrap.css");

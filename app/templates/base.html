@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
+    <link type="image/ico" rel="icon" href="{{url_for('static', filename='images/favicon.ico') }}"/>
+    <link REL="shortcut icon" href="{{url_for('static', filename='images/favicon.ico') }}">
+
+    {% if title %}
+    <title>{{title}} - Caffeine Mark Performance numbers</title>
+    {% else %}
+    <title>Caffeine mark numbers</title>
+    {% endif %}
+  </head>
+  <body>
+    <!-- NAVBAR
+      ================================================== -->
+      <div class="navbar-wrapper">
+        <div class="container">
+          <div class="navbar navbar-fixed-top navbar-inverse ">
+            <div class="navbar-inner">
+              <a class="brand" href="/index">Caffeine Mark Numbers</a>
+              <div class="nav-collapse collapse">
+                <ul class="nav">
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">MIPS <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a  href="/caffeine-mips-ocap">OCAP</a></li>
+                      <li><a  href="/caffeine-mips-personal">Personal</a></li>
+                      <li><a  href="/caffeine-mips-standard">Standard</a></li>
+                      <li><a  href="/caffeine-mips">All</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">ARM <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a  href="/caffeine-arm-ocap">OCAP</a></li>
+                      <li><a  href="/caffeine-arm-personal">Personal</a></li>
+                      <li><a  href="/caffeine-arm-standard">Standard</a></li>
+                      <li><a  href="/caffeine-arm-all">All</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">i686 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a  href="/caffeine-i686-ocap">OCAP</a></li>
+                      <li><a  href="/caffeine-i686-personal">Personal</a></li>
+                      <li><a  href="/caffeine-i686-standard">Standard</a></li>
+                      <li><a  href="/caffeine-i686">All</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">PowerPC <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a  href="/caffeine-powerpc-ocap">OCAP</a></li>
+                      <li><a  href="/caffeine-powerpc-personal">Personal</a></li>
+                      <li><a  href="/caffeine-powerpc-standard">Standard</a></li>
+                      <li><a  href="/caffeine-powerpc-">All</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="/caffeine">All</a></li>
+                </ul>
+              </div><!--/.nav-collapse -->
+            </div><!-- /.navbar-inner -->
+          </div><!-- /.navbar -->
+        </div> <!-- /.container -->
+      </div><!-- /.navbar-wrapper -->
+    <hr>
+    {% block content %}{% endblock %}
+          <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-transition.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-alert.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-modal.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-dropdown.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-scrollspy.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-tab.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-tooltip.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-popover.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-button.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-collapse.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-carousel.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-typeahead.js') }}"></script>
+  </body>
+</html>
