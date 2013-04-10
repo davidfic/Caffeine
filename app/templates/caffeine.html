@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 id="title-header" class="hero-unit">Caffeine scores for {{cpu}} {{configuration|capitalize}}</h1>
+<h1 id="title-header" class="hero-unit">Caffeine scores for {{cpu}} {{configuration}}</h1>
 {% for jpg in files %}
 
 <div><img src="{{ url_for('custom_static', filename=jpg) }}"></div>

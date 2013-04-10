@@ -6,7 +6,7 @@ import re
 chips = {
 	"i686": "i686",
 	"powerpc": "PowerPC",
-	"mips": "Mips",
+	"mips": "MIPS",
 	"arm": "ARM"
 }
 
@@ -16,11 +16,10 @@ confs = {
 	"ocap":	"OCAP11",
 }
 
+#use lstrip in the future
 def strip(filename):
 	replacer = "/Users/davidfic/Dropbox/Projects/web/caffeine/app/static/images/caffeine"
 	return filename.replace(replacer,'')
-#lstrip to replace my replace	
-
 
 
 def all_images(image_path):
@@ -53,17 +52,22 @@ def custom_static(filename):
 	
 
 @app.route('/caffeine')
-@app.route('/caffeine-<chip>/', defaults={'configuration': 'all'})
+@app.route('/caffeine-<chip>/')
 @app.route('/caffeine-<chip>-<configuration>')
 def caffeinemips(chip=None,configuration=None):
 	if not chip and not configuration:
 		return render_template("caffeine.html",
 			title = "All the CaffeineMark Numbers",
 			files = all_images('static/images/caffeine'),configuration="",cpu="All")
+	elif not configuration:
+		return render_template("caffeine.html",
+			title = "All the " + chip + " Numbers",
+			files = all_images('static/images/caffeine'),configuration="All",chip=chip)
+			
 	return render_template("caffeine.html",
 		title = 'Caffeine Mark numbers', 
 		files=get_images('static/images/caffeine/',chip,configuration),
-		configuration=configuration, cpu=chips.get(chip,"unknown"))
+		configuration=confs.get(configuration,"unknown"), cpu=chips.get(chip,"unknown"),test="test")
 
 
 
